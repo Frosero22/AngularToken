@@ -1,0 +1,26 @@
+<div class="token-input" style="display: flex; align-items: center;">
+    <label for="token" style="margin-right: 10px;">Token:</label>
+    <input id="token" type="text" [(ngModel)]="token" placeholder="Token" readonly style="width: 300px; margin-right: 10px;" />
+    <button (click)="toggleCountdown()">{{ isCounting ? 'Detener' : 'Iniciar Contador' }}</button>
+</div>
+<div>
+    <p>Tiempo restante: {{ counter }}</p>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Token</th>
+            <th>Hora de Creación</th>
+            <th>Utilizado</th>
+            <th>Cliente</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of dataTable">
+            <td>{{ data.token }}</td>
+            <td>{{ data.horaCreacion }}</td>
+            <td>{{ data.utilizado ? 'Sí' : 'No' }}</td>
+            <td>{{ data.cliente }}</td>
+        </tr>
+    </tbody>
+</table>
